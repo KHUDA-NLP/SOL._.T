@@ -47,6 +47,3 @@ llm_chain = LLMChain(
 
 # 질의에 대한 응답 생성
 result = llm_chain.run(situation=query)
-
-# 결과 출력
-print(result)
