@@ -1,4 +1,4 @@
-# document, retriever 받은 후 수정할 code
+# document를 받기 전 prompt engineering만 진행
 
 from dotenv import load_dotenv
 load_dotenv()  # dotenv 파일에서 API KEY 불러오기
@@ -6,8 +6,8 @@ load_dotenv()  # dotenv 파일에서 API KEY 불러오기
 from langchain.chat_models import ChatOpenAI
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
-from langchain.chains import RetrievalQA
 from langchain.prompts import ChatPromptTemplate, PromptTemplate, SystemMessagePromptTemplate, AIMessagePromptTemplate, HumanMessagePromptTemplate
+from langchain.chains import LLMChain
 
 # 사용자 입력을 받습니다.
 query = input("상황을 입력하세요: ")
@@ -39,19 +39,14 @@ human_message_prompt = HumanMessagePromptTemplate.from_template(human_template)
 # ChatPromptTemplate 생성
 chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
 
-# 프롬프트 메시지 형식 설정
-formatted_messages = chat_prompt.format_messages(situation=query)
-
-# RetrievalQA 체인을 구성하여 프롬프트와 모델을 묶기
-qa = RetrievalQA.from_chain_type(
+# LLMChain 생성
+llm_chain = LLMChain(
     llm=chat_model,
-    chain_type="stuff",
-    chain_type_kwargs={"prompt": formatted_messages},
-    # retriever는 도큐먼트 검색을 위해 필요, 없으면 생략 가능
+    prompt=chat_prompt
 )
 
 # 질의에 대한 응답 생성
-result = qa()
+result = llm_chain.run(situation=query)
 
 # 결과 출력
 print(result)
