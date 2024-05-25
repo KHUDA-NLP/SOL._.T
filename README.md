@@ -11,11 +11,11 @@
 
 
 ## 주요 기능
-![KakaoTalk_Photo_2024-05-24-22-27-58](https://github.com/coqls1229/Sol-T/assets/127406760/1c291849-e59f-4a5b-bdd6-636226b27ddf)
+<img src = "https://github.com/coqls1229/Sol-T/assets/127406760/1c291849-e59f-4a5b-bdd6-636226b27ddf" width = "480" height = "400"/>
 
 사용자가 sol._.T에게 자신의 상황을 입력하면, sol._.T는 그에 맞는 연애 솔루션을 제공해 준다. 만약 사용자의 채팅이 불충분한 정보를 담고 있는 경우, sol._.T는 상황이나 맥락을 이해하기 위해 추가 질문을 요구하기도 한다.
 
-![KakaoTalk_Photo_2024-05-24-22-28-02](https://github.com/coqls1229/Sol-T/assets/127406760/562c8951-f04b-4e02-a991-325b76e3afc3)
+<img src = "https://github.com/coqls1229/Sol-T/assets/127406760/562c8951-f04b-4e02-a991-325b76e3afc3" width = "480" height = "400"/>
 
 사용자가 채팅을 통해 자신의 상황을 충분히 설명하였다면, sol._.T는 문제 상황을 파악한 후 상대방의 입장에 공감하여 갈등을 해소할 수 있는 해결책을 제시해 준다.
 
